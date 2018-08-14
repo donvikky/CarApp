@@ -1,0 +1,648 @@
+{% extends 'cars/base.html' %}
+{% load staticfiles %}
+{% load humanize %}
+{% block content %}
+        <div class="media-holder type-3" data-bg="{% static 'images/hero-bg.jpg' %}">
+
+      <div class="container">
+
+        <div class="content-element5">
+
+          <h1>Meet the New Volta V90</h1>
+          <h4>Where form meets function </h4>
+          <div class="btn-list">
+            <a href="#" class="btn">Check it out</a>
+          </div>
+
+        </div>
+
+        <div class="tabs type-2 style-4 tabs-section clearfix">
+          <!--tabs navigation-->
+          <ul class="tabs-nav clearfix">
+            <li>
+              <a href="#tab-1">Find a Car</a>
+            </li>
+            <!-- <li>
+              <a href="#tab-2">Find a Part or Accessory</a>
+            </li>
+            <li>
+              <a href="#tab-3">Find a Dealer</a>
+            </li>
+            <li>
+              <a href="#tab-4">Find a Review</a>
+            </li> -->
+          </ul>
+          <!--tabs content-->
+          <div class="tabs-content">
+            <div id="tab-1">
+
+              <div class="input-wrapper">
+
+                <input type="checkbox" name="checkbox-1" id="checkbox-1" checked="">
+                <label for="checkbox-1">All Vehicles</label>
+
+                <input type="checkbox" name="checkbox-2" id="checkbox-2">
+                <label for="checkbox-2">New</label>
+
+                <input type="checkbox" name="checkbox-3" id="checkbox-3">
+                <label for="checkbox-3">Used</label>
+
+                <input type="checkbox" name="checkbox-4" id="checkbox-4">
+                <label for="checkbox-4">Certified Pre-Owned</label>
+
+              </div>
+
+              <div class="select-area tab-col-auto">
+
+                <div class="select-col">
+
+                  <div class="auto-custom-select">
+                    <select data-default-text="All Makes">
+                      <option value="Option 1">Honda</option>
+                      <option value="Option 2">Toyota</option>
+                      <option value="Option 3">Bentley</option>
+                    </select>
+                  </div>
+
+                </div>
+
+                <div class="select-col">
+
+                  <div class="auto-custom-select">
+                    <select data-default-text="All Models">
+                      <option value="Option 1">BMW</option>
+                      <option value="Option 2">Camry</option>
+                      <option value="Option 3">Corrola</option>
+                    </select>
+                  </div>
+
+                </div>
+
+                <div class="select-col">
+
+                  <div class="auto-custom-select">
+                    <select data-default-text="All Years">
+                      <option value="Option 1">2009</option>
+                      <option value="Option 2">2008</option>
+                      <option value="Option 3">2007</option>
+                    </select>
+                  </div>
+
+                </div>
+
+                <div class="select-col">
+
+                  <div class="auto-custom-select">
+                    <select data-default-text="Max Price">
+                      <option value="Option 1">5 million</option>
+                      <option value="Option 2">3 million</option>
+                      <option value="Option 3">1 million</option>
+                    </select>
+                  </div>
+
+                </div>
+
+
+                <div class="select-col">
+
+                  <div class="auto-custom-select">
+                    <select data-default-text="Max Mileage">
+                      <option value="Option 1">100,000</option>
+                      <option value="Option 2">50,000</option>
+                      <option value="Option 3">20,000</option>
+                    </select>
+                  </div>
+
+                </div>
+
+                <div class="select-col">
+                  <a href="#" class="btn btn-style-3">
+                    <i class="licon-magnifier"></i>Search</a>
+                </div>
+
+              </div>
+
+              <a href="#" class="info-btn">More search options</a>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- - - - - - - - - - - - - - Content - - - - - - - - - - - - - - - - -->
+    <div id="content">
+              <div class="page-section type-2">
+
+        <div class="container">
+
+          <div class="our-services">
+
+            <div class="row">
+              <div class="col-sm-4">
+
+                <div class="service-item">
+                  <h3 class="service-title">About Us</h3>
+                  <p>Save more money when you buy your car yourself. Choose a package and price that works for you.</p>
+                  <a href="#" class="btn btn-style-3">Button</a>
+                </div>
+
+              </div>
+              <div class="col-sm-4">
+
+                <div class="service-item">
+                  <h3 class="service-title">About Us</h3>
+                  <p>Save more money when you buy your car yourself. Choose a package and price that works for you.</p>
+                  <a href="#" class="btn btn-style-3">Button</a>
+                </div>
+
+              </div>
+              <div class="col-sm-4">
+
+                <div class="service-item">
+                  <h3 class="service-title">About Us</h3>
+                  <p>Save more money when you buy your car yourself. Choose a package and price that works for you.</p>
+                  <a href="#" class="btn btn-style-3">Button</a>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    <div class="page-section-bg">
+        <div class="container">
+          <h3 class="section-title">Browse Our Cars</h3>
+          <div class="products-holder">
+            <div class="tabs tabs-section style-2 clearfix">
+                <!--tabs navigation-->
+              <ul class="tabs-nav clearfix">
+                <li>
+                  <a href="#tab-8">Featured</a>
+                </li>
+                <li>
+                  <a href="#tab-9">Latest</a>
+                </li>
+                <li>
+                  <a href="#tab-10">Popular</a>
+                </li>
+              </ul>
+                <!--tabs content-->
+              <div class="tabs-content">
+                  <div id="tab-8">
+                      <div class="row flex-row">
+                          {% for car in cars %}
+                          <div class="col-md-3 col-xs-6">
+                            <div class="product">
+
+                            <!-- - - - - - - - - - - - - - Product Image - - - - - - - - - - - - - - - - -->
+                            <a href="#">
+                              <img src="{{ car.feature_photo.url }}" alt=""/>
+                            </a>
+                            <!-- - - - - - - - - - - - - - End of Product Image - - - - - - - - - - - - - - - - -->
+
+                            <!-- - - - - - - - - - - - - - Product Description - - - - - - - - - - - - - - - - -->
+                            <div class="product-description">
+                              <h5 class="product-name">
+                                <a href="#">{{ car.year }} {{ car.model  }}</a>
+                              </h5>
+                              <div class="pricing-area">
+                                <div class="product-price">
+                                  NGN {{ car.amount | intcomma}}
+                                </div>
+                              </div>
+                              <div class="model-loc">
+                                <ul>
+                                  <li>
+                                    <span>Mileage</span>{{ car.odometer | intcomma}}</li>
+                                  <li>
+                                    <span>Colours</span>{{ car.colour }}</li>
+                                </ul>
+                              </div>
+                              <div class="model-info">
+                                <a href="{% url 'cars:detail' pk=car.pk %}">View More Details
+                                </a>
+                              </div>
+                            </div>
+                            <!-- - - - - - - - - - - - - - End of Product Description - - - - - - - - - - - - - - - - -->
+                            </div>
+                          </div>
+                          {% endfor %}
+                      </div>
+                  </div>
+                  <div id="tab-9">
+                      <div class="row flex-row">
+                          <!----- Product ----------------->
+                      </div>
+                  </div>
+                  <div id="tab-10">
+                      <div class="row flex-row">
+                          <!----- Product ----------------->
+                      </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+          <div class="align-center">
+            <a href="#" class="btn">Show All</a>
+          </div>
+        </div>
+    </div>
+
+
+    <div class="page-section">
+
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12">
+
+              <div class="products-holder">
+                  <h3 class="section-title">Explore By</h3>
+                  <div class="tabs tabs-section style-2 clearfix">
+                    <!--tabs navigation-->
+                      <ul class="tabs-nav clearfix">
+                        <li>
+                          <a href="#tab-5">Body Style</a>
+                        </li>
+                        <li>
+                          <a href="#tab-6">Make</a>
+                        </li>
+                        <li>
+                          <a href="#tab-7">Price</a>
+                        </li>
+                      </ul>
+                        <!--tabs content-->
+                        <div class="tabs-content">
+                            <div id="tab-5">
+                                <div class="row flex-row">
+                                    <div class="col-md-2 col-sm-4 col-xs-4">
+
+                                      <!-- - - - - - - - - - - - - - Product - - - - - - - - - - - - - - - - -->
+                                      <div class="product">
+
+                                        <!-- - - - - - - - - - - - - - Product Image - - - - - - - - - - - - - - - - -->
+                                        <a href="#">
+                                          <img src="{% static 'images/165x110_img1.jpg' %}" alt="">
+                                        </a>
+                                        <!-- - - - - - - - - - - - - - End of Product Image - - - - - - - - - - - - - - - - -->
+
+                                        <!-- - - - - - - - - - - - - - Product Description - - - - - - - - - - - - - - - - -->
+                                        <div class="product-description align-center">
+
+                                          <h6 class="product-name">
+                                            <a href="#">Crossover</a>
+                                          </h6>
+
+                                        </div>
+                                        <!-- - - - - - - - - - - - - - End of Product Description - - - - - - - - - - - - - - - - -->
+
+                                      </div>
+
+                                    </div>
+
+                                <div class="col-md-2 col-sm-4 col-xs-4">
+
+                          <!-- - - - - - - - - - - - - - Product - - - - - - - - - - - - - - - - -->
+                          <div class="product">
+
+                            <!-- - - - - - - - - - - - - - Product Image - - - - - - - - - - - - - - - - -->
+                            <a href="#">
+                              <img src="{% static 'images/165x110_img2.jpg' %}" alt="">
+                            </a>
+                            <!-- - - - - - - - - - - - - - End of Product Image - - - - - - - - - - - - - - - - -->
+
+                            <!-- - - - - - - - - - - - - - Product Description - - - - - - - - - - - - - - - - -->
+                            <div class="product-description align-center">
+
+                              <h6 class="product-name">
+                                <a href="#">SUV</a>
+                              </h6>
+
+                            </div>
+                            <!-- - - - - - - - - - - - - - End of Product Description - - - - - - - - - - - - - - - - -->
+
+                          </div>
+
+                        </div>
+
+                        <div class="col-md-2 col-sm-4 col-xs-4">
+
+                          <!-- - - - - - - - - - - - - - Product - - - - - - - - - - - - - - - - -->
+                          <div class="product">
+
+                            <!-- - - - - - - - - - - - - - Product Image - - - - - - - - - - - - - - - - -->
+                            <a href="#">
+                              <img src="{% static 'images/165x110_img3.jpg' %}" alt="">
+                            </a>
+                            <!-- - - - - - - - - - - - - - End of Product Image - - - - - - - - - - - - - - - - -->
+
+                            <!-- - - - - - - - - - - - - - Product Description - - - - - - - - - - - - - - - - -->
+                            <div class="product-description align-center">
+
+                              <h6 class="product-name">
+                                <a href="#">Pickup Truck</a>
+                              </h6>
+
+                            </div>
+                            <!-- - - - - - - - - - - - - - End of Product Description - - - - - - - - - - - - - - - - -->
+
+                          </div>
+
+                        </div>
+
+                        <div class="col-md-2 col-sm-4 col-xs-4">
+
+                          <!-- - - - - - - - - - - - - - Product - - - - - - - - - - - - - - - - -->
+                          <div class="product">
+
+                            <!-- - - - - - - - - - - - - - Product Image - - - - - - - - - - - - - - - - -->
+                            <a href="#">
+                              <img src="{% static 'images/165x110_img4.jpg' %}" alt="">
+                            </a>
+                            <!-- - - - - - - - - - - - - - End of Product Image - - - - - - - - - - - - - - - - -->
+
+                            <!-- - - - - - - - - - - - - - Product Description - - - - - - - - - - - - - - - - -->
+                            <div class="product-description align-center">
+
+                              <h6 class="product-name">
+                                <a href="#">Convertible</a>
+                              </h6>
+
+                            </div>
+                            <!-- - - - - - - - - - - - - - End of Product Description - - - - - - - - - - - - - - - - -->
+
+                          </div>
+
+                        </div>
+
+                        <div class="col-md-2 col-sm-4 col-xs-4">
+
+                          <!-- - - - - - - - - - - - - - Product - - - - - - - - - - - - - - - - -->
+                          <div class="product">
+
+                            <!-- - - - - - - - - - - - - - Product Image - - - - - - - - - - - - - - - - -->
+                            <a href="#">
+                              <img src="{% static 'images/165x110_img5.jpg' %}" alt="">
+                            </a>
+                            <!-- - - - - - - - - - - - - - End of Product Image - - - - - - - - - - - - - - - - -->
+
+                            <!-- - - - - - - - - - - - - - Product Description - - - - - - - - - - - - - - - - -->
+                            <div class="product-description align-center">
+
+                              <h6 class="product-name">
+                                <a href="#">Sedan</a>
+                              </h6>
+
+                            </div>
+                            <!-- - - - - - - - - - - - - - End of Product Description - - - - - - - - - - - - - - - - -->
+
+                          </div>
+
+                        </div>
+
+                        <div class="col-md-2 col-sm-4 col-xs-4">
+
+                          <!-- - - - - - - - - - - - - - Product - - - - - - - - - - - - - - - - -->
+                          <div class="product">
+
+                            <!-- - - - - - - - - - - - - - Product Image - - - - - - - - - - - - - - - - -->
+                            <a href="#">
+                              <img src="{% static 'images/165x110_img6.jpg' %}" alt="">
+                            </a>
+                            <!-- - - - - - - - - - - - - - End of Product Image - - - - - - - - - - - - - - - - -->
+
+                            <!-- - - - - - - - - - - - - - Product Description - - - - - - - - - - - - - - - - -->
+                            <div class="product-description align-center">
+
+                              <h6 class="product-name">
+                                <a href="#">Coupe</a>
+                              </h6>
+
+                            </div>
+                            <!-- - - - - - - - - - - - - - End of Product Description - - - - - - - - - - - - - - - - -->
+
+                          </div>
+
+                        </div>
+
+                        <div class="col-md-2 col-sm-4 col-xs-4">
+
+                          <!-- - - - - - - - - - - - - - Product - - - - - - - - - - - - - - - - -->
+                          <div class="product">
+
+                            <!-- - - - - - - - - - - - - - Product Image - - - - - - - - - - - - - - - - -->
+                            <a href="#">
+                              <img src="{% static 'images/165x110_img7.jpg' %}" alt="">
+                            </a>
+                            <!-- - - - - - - - - - - - - - End of Product Image - - - - - - - - - - - - - - - - -->
+
+                            <!-- - - - - - - - - - - - - - Product Description - - - - - - - - - - - - - - - - -->
+                            <div class="product-description align-center">
+
+                              <h6 class="product-name">
+                                <a href="#">Luxury Car</a>
+                              </h6>
+
+                            </div>
+                            <!-- - - - - - - - - - - - - - End of Product Description - - - - - - - - - - - - - - - - -->
+
+                          </div>
+
+                        </div>
+
+                        <div class="col-md-2 col-sm-4 col-xs-4">
+
+                          <!-- - - - - - - - - - - - - - Product - - - - - - - - - - - - - - - - -->
+                          <div class="product">
+
+                            <!-- - - - - - - - - - - - - - Product Image - - - - - - - - - - - - - - - - -->
+                            <a href="#">
+                              <img src="{% static 'images/165x110_img8.jpg' %}" alt="">
+                            </a>
+                            <!-- - - - - - - - - - - - - - End of Product Image - - - - - - - - - - - - - - - - -->
+
+                            <!-- - - - - - - - - - - - - - Product Description - - - - - - - - - - - - - - - - -->
+                            <div class="product-description align-center">
+
+                              <h6 class="product-name">
+                                <a href="#">Wagon/Hatchback</a>
+                              </h6>
+
+                            </div>
+                            <!-- - - - - - - - - - - - - - End of Product Description - - - - - - - - - - - - - - - - -->
+
+                          </div>
+
+                        </div>
+
+                        <div class="col-md-2 col-sm-4 col-xs-4">
+
+                          <!-- - - - - - - - - - - - - - Product - - - - - - - - - - - - - - - - -->
+                          <div class="product">
+
+                            <!-- - - - - - - - - - - - - - Product Image - - - - - - - - - - - - - - - - -->
+                            <a href="#">
+                              <img src="{% static 'images/165x110_img9.jpg' %}" alt="">
+                            </a>
+                            <!-- - - - - - - - - - - - - - End of Product Image - - - - - - - - - - - - - - - - -->
+
+                            <!-- - - - - - - - - - - - - - Product Description - - - - - - - - - - - - - - - - -->
+                            <div class="product-description align-center">
+
+                              <h6 class="product-name">
+                                <a href="#">Green Car/Hybrid</a>
+                              </h6>
+
+                            </div>
+                            <!-- - - - - - - - - - - - - - End of Product Description - - - - - - - - - - - - - - - - -->
+
+                          </div>
+
+                        </div>
+
+                        <div class="col-md-2 col-sm-4 col-xs-4">
+
+                          <!-- - - - - - - - - - - - - - Product - - - - - - - - - - - - - - - - -->
+                          <div class="product">
+
+                            <!-- - - - - - - - - - - - - - Product Image - - - - - - - - - - - - - - - - -->
+                            <a href="#">
+                              <img src="{% static 'images/165x110_img10.jpg' %}" alt="">
+                            </a>
+                            <!-- - - - - - - - - - - - - - End of Product Image - - - - - - - - - - - - - - - - -->
+
+                            <!-- - - - - - - - - - - - - - Product Description - - - - - - - - - - - - - - - - -->
+                            <div class="product-description align-center">
+
+                              <h6 class="product-name">
+                                <a href="#">Sports Car</a>
+                              </h6>
+
+                            </div>
+                            <!-- - - - - - - - - - - - - - End of Product Description - - - - - - - - - - - - - - - - -->
+
+                          </div>
+
+                        </div>
+                        <div class="col-md-2 col-sm-4 col-xs-4">
+
+                          <!-- - - - - - - - - - - - - - Product - - - - - - - - - - - - - - - - -->
+                          <div class="product">
+
+                            <!-- - - - - - - - - - - - - - Product Image - - - - - - - - - - - - - - - - -->
+                            <a href="#">
+                              <img src="{% static 'images/165x110_img11.jpg' %}" alt="">
+                            </a>
+                            <!-- - - - - - - - - - - - - - End of Product Image - - - - - - - - - - - - - - - - -->
+
+                            <!-- - - - - - - - - - - - - - Product Description - - - - - - - - - - - - - - - - -->
+                            <div class="product-description align-center">
+
+                              <h6 class="product-name">
+                                <a href="#">Minivan/Van</a>
+                              </h6>
+
+                            </div>
+                            <!-- - - - - - - - - - - - - - End of Product Description - - - - - - - - - - - - - - - - -->
+
+                          </div>
+
+                        </div>
+                        </div>
+                            </div>
+                            <div id="tab-6">
+                                <div class="row">
+                                    {% for make in makes %}
+                                        <div class="col-sm-3">
+                                            <ul class="custom-list type-5">
+                                                <li>
+                                                  <a href="#">{{ make }}</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                            <div id="tab-7">
+                                <div class="row">
+                        <div class="col-sm-3">
+
+                          <ul class="custom-list type-5">
+
+                            <li>
+                              <a href="#">Less than NGN 1,000,000</a>
+                            </li>
+                            <li>
+                              <a href="#">NGN 1,000,000-NGN 1,500,000</a>
+                            </li>
+                            <li>
+                              <a href="#">NGN 1,500,000-NGN 2,000,000</a>
+                            </li>
+
+                          </ul>
+
+                        </div>
+                        <div class="col-sm-3">
+
+                          <ul class="custom-list type-5">
+
+                            <li>
+                              <a href="#">NGN 2,000,001-NGN 3,000,000</a>
+                            </li>
+                            <li>
+                              <a href="#">NGN 3,000,001-NGN 4,000,000</a>
+                            </li>
+                            <li>
+                              <a href="#">NGN 4,000,001-NGN 5,000,000</a>
+                            </li>
+
+                          </ul>
+
+                        </div>
+                        <div class="col-sm-3">
+
+                          <ul class="custom-list type-5">
+
+                            <li>
+                              <a href="#">NGN 5,000,001-NGN 7,000,000</a>
+                            </li>
+                            <li>
+                              <a href="#">NGN 7,500,000-NGN 10,000,000</a>
+                            </li>
+                            <li>
+                              <a href="#">NGN 10,000,001-NGN 12,500,000</a>
+                            </li>
+
+                          </ul>
+
+                        </div>
+                        <div class="col-sm-3">
+
+                          <ul class="custom-list type-5">
+
+                            <li>
+                              <a href="#">NGN 12,500,001-NGN 15,000,000</a>
+                            </li>
+                            <li>
+                              <a href="#">More than NGN 15,000,000</a>
+                            </li>
+
+                          </ul>
+
+                        </div>
+                      </div>
+                    </div>
+                   </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+    </div>
+    <!-- - - - - - - - - - - - - end Content - - - - - - - - - - - - - - - -->
+{% endblock content %}

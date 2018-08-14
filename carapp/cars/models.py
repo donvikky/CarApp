@@ -137,15 +137,21 @@ class Car(models.Model):
     sale_status = models.CharField('Sale Status', max_length=20, choices=SALE_STATUS_CHOICES)
     location = models.ForeignKey(Location, related_name='location', on_delete=models.CASCADE)
     amount = models.DecimalField('Amount', max_digits=20, decimal_places=2)
-    photo = models.ImageField('Main Photo', upload_to='pix', null=True, blank=True)
-    photo1 = models.ImageField(upload_to='pix', null=True, blank=True)
-    photo2 = models.ImageField(upload_to='pix', null=True, blank=True)
-    photo3 = models.ImageField(upload_to='pix', null=True, blank=True)
-    photo4 = models.ImageField(upload_to='pix', null=True, blank=True)
-    photo5 = models.ImageField(upload_to='pix', null=True, blank=True)
-    photo6 = models.ImageField(upload_to='pix', null=True, blank=True)
-    photo7 = models.ImageField(upload_to='pix', null=True, blank=True)
-    photo8 = models.ImageField(upload_to='pix', null=True, blank=True)
+    featured = models.NullBooleanField()
+    feature_photo = models.ImageField('Feature', upload_to='pix', null=True, blank=True)
+
+    def __str__(self):
+        carname = "%s %s %d" % (self.make, self.model, self.year)
+        return carname
+
+
+class CarPhoto(models.Model):
+    car = models.ForeignKey(Car, related_name='photos', on_delete=models.CASCADE)
+    photo = models.ImageField('Photo', upload_to='pix', null=True, blank=True)
+
+    def __str__(self):
+        carname = "%s %s %d" % (self.car.make, self.car.model, self.car.year)
+        return carname
 
 
 

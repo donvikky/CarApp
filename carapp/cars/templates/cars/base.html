@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock title %}</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900%7COverpass:300,400,600,700,800,900" rel="stylesheet">
+
+    <!-- Vendor CSS
+      ============================================ -->
+
+    <link rel="stylesheet" href="{% static 'font/demo-files/demo.css' %}">
+
+    <!-- CSS theme files
+      ============================================ -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/fontello.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+    </head>
+<body>
+    <!-- - - - - - - - - - - - - - Wrapper - - - - - - - - - - - - - - - - -->
+
+  <div id="wrapper" class="wrapper-container">
+
+    <!-- - - - - - - - - - - - - Mobile Menu - - - - - - - - - - - - - - -->
+
+    <nav id="mobile-advanced" class="mobile-advanced"></nav>
+
+    <!-- - - - - - - - - - - - - - Header - - - - - - - - - - - - - - - - -->
+
+    <header id="header" class="header-4">
+
+      <!-- top-bar -->
+      <div class="top-bar">
+
+        <div class="flex-row flex-justify flex-center">
+
+          <div class="slash-list">
+            <a href="#">Honda</a>
+            <a href="#">BMW</a>
+            <a href="#">Toyota</a>
+            <a href="#">Vans</a>
+            <a href="#">Ford</a>
+            <a href="#">Bentley</a>
+          </div>
+
+          <div class="contact-info-menu type-2">
+
+            <div class="contact-info-item lang-button">
+
+              <div class="flex-row flex-center">
+
+                <i class="licon-earth"></i>
+                <div class="item-inner">
+                  <a href="#">Log in/ Sign up</a>
+                  <ul class="dropdown-list">
+                    <li>
+                      <a href="#">Sign in</a>
+                    </li>
+                    <li>
+                      <a href="#">Log in</a>
+                    </li>
+                  </ul>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- top-header -->
+
+      <div class="top-header flex-row flex-justify flex-center">
+
+        <!-- logo -->
+
+        <div class="logo-wrap">
+
+          <a href="{% url 'cars:index' %}" class="logo">
+            <img src="{% static 'images/logo.png' %}" height="30" alt="">
+          </a>
+
+        </div>
+
+        <!--main menu-->
+
+        <div class="menu-holder">
+
+          <div class="menu-wrap flex-row">
+
+            <div class="nav-item">
+
+              <!-- - - - - - - - - - - - - - Navigation - - - - - - - - - - - - - - - - -->
+
+              <nav id="main-navigation" class="main-navigation">
+                <ul id="menu" class="clearfix">
+                  <li class="current">
+                    <a href="#">Home</a>
+                  </li>
+                  <li class="">
+                    <a href="#">Cars</a>
+                  </li>
+                  <li class="">
+                    <a href="#">About Us</a>
+                  </li>
+                  <li class="">
+                    <a href="#">Contact Us</a>
+                  </li>
+                </ul>
+              </nav>
+
+              <!-- - - - - - - - - - - - - end Navigation - - - - - - - - - - - - - - - -->
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </header>
+
+    <!-- - - - - - - - - - - - - end Header - - - - - - - - - - - - - - - -->
+
+    {% block content %}
+
+    {% endblock content %}
+
+
+    <!-- - - - - - - - - - - - - - Footer - - - - - - - - - - - - - - - - -->
+
+    <footer id="footer" class="footer-4">
+
+      <!-- pre footer -->
+      <div class="pre-footer">
+
+        <div class="container">
+
+          <div class="row flex-row flex-center">
+            <div class="col-md-7 col-sm-12">
+
+              <form id="newsletter">
+                <p class="f-left align-right">Sign up now and get exclusive offers
+                  <br> and news straight to your inbox!</p>
+                <button type="submit" class="btn-email btn btn-style-2 f-right" data-type="submit">
+                  <i class="licon-envelope"></i>
+                </button>
+                <div class="wrapper">
+                  <input type="email" placeholder="Enter your email address" name="newsletter-email">
+                </div>
+              </form>
+
+            </div>
+            <div class="col-md-5 col-sm-12">
+
+              <div class="flex-row">
+                <span>Connect With Us</span>
+                <ul class="social-icons">
+
+                  <li>
+                    <a href="#">
+                      <i class="icon-facebook"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="icon-twitter"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="icon-youtube-play"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="icon-gplus-3"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="icon-instagram-5"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="icon-linkedin-3"></i>
+                    </a>
+                  </li>
+
+                </ul>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Copyright -->
+      <div class="copyright-section">
+
+        <div class="container">
+
+          <div class="copyright align-center">Copyright 4Core Technologies © 2018. All Rights Reserved.</div>
+
+        </div>
+
+        <!-- <a href="#" class="btn btn-big btn-style-3"><i class="licon-bubbles"></i>Chat With Us</a> -->
+
+      </div>
+
+    </footer>
+
+    <!-- - - - - - - - - - - - - end Footer - - - - - - - - - - - - - - - -->
+
+
+  </div>
+
+  <!-- - - - - - - - - - - - end Wrapper - - - - - - - - - - - - - - -->
+
+  <!-- JS Libs & Plugins
+  ============================================ -->
+  <script src="{% static 'js/libs/jquery.modernizr.js' %}"></script>
+  <script src="{% static 'js/libs/jquery-2.2.4.min.js' %}"></script>
+  <script src="{% static 'js/libs/jquery-ui.min.js' %}"></script>
+  <script src="{% static 'js/libs/retina.min.js' %}"></script>
+  <script src="{% static 'plugins/mad.customselect.js' %}"></script>
+  <script src="{% static 'plugins/sticky-sidebar.js' %}"></script>
+  <script src="{% static 'plugins/jquery.queryloader2.min.js' %}"></script>
+  <script src="{% static 'plugins/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'plugins/fancybox/jquery.fancybox.min.js' %}"></script>
+  <script src="{% static 'plugins/instafeed.min.js' %}"></script>
+  <script src="{% static 'plugins/mad.tabs.js' %}"></script>
+
+  <!-- JS theme files
+  ============================================ -->
+  <script src="{% static 'js/plugins.js' %}"></script>
+  <script src="{% static 'js/script.js' %}"></script>
+
+</body>
+</html>

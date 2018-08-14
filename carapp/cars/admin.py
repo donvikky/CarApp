@@ -1,6 +1,6 @@
 from django.contrib import admin
 from cars.models import (Make, Model, DrivingCondition, Colour, Cylinder, Transmission, Fuel, Drive,
-                         EngineType, BodyStyle, Damage, Location, Car)
+                         EngineType, BodyStyle, Damage, Location, Car, CarPhoto)
 # Register your models here.
 admin.site.register(Make)
 admin.site.register(Model)
@@ -15,3 +15,4 @@ admin.site.register(BodyStyle)
 admin.site.register(Damage)
 admin.site.register(Location)
 admin.site.register(Car)
+admin.site.register(CarPhoto)

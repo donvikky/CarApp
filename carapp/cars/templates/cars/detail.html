@@ -1,0 +1,277 @@
+{% extends 'cars/base.html' %}
+{% load staticfiles %}
+{% load humanize %}
+{% block title %}{{ car.year }} {{ car.model }}{% endblock %}
+{% block content %}
+    <div id="content">
+        <div class="page-section" style="padding-top: 20px;">
+            <div class="container">
+                <div class="single-product-title">
+                    <div class="flex-row flex-justify flex-center">
+                        <div class="title">
+                            <h2 class="section-title">{{ car.year }} {{ car.model }}</h2>
+                        </div>
+                        <div class="product-price align-right">
+                            NGN {{ car.amount | intcomma }}
+                            <p>Included tax, title, <br> license and dealer fees</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <main id="main" class="col-md-8">
+                        <div class="single-product-section">
+                            <div class="content-element3">
+                                <div class="carousel-type-4 type-2">
+                                    <div class="owl-carousel" id="sync-carousel-1" data-max-items="1">
+                                        {% for car in car.photos.all %}
+                                            <div class="item-carousel">
+                                                <a href="{{ car.photo.url }}" class="fancybox"
+                                                   data-fancybox="group"><img src="{{ car.photo.url }}" alt=""></a>
+                                                <div class="overlay">
+                                                    <div class="icon-fancy">
+                                                        <a href="javascript:;" data-fancybox
+                                                           data-src="http://www.youtube.com/embed/S5MsopCiWog?wmode=transparent"><i
+                                                                class="licon-camera"></i><span>1</span></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        {% endfor %}
+                                    </div>
+                                    <!-- - - - - - - - - - - - - - Carousel Pagination - - - - - - - - - - - - - - - - -->
+                                    <div class="owl-carousel type-small" data-sync="#sync-carousel-1" data-max-items="5"
+                                         data-item-margin="20">
+                                        {% for car in car.photos.all %}
+                                            <div class="item-carousel">
+                                                <img src="{{ car.photo.url }}" alt="">
+                                            </div>
+                                        {% endfor %}
+                                    </div>
+                                    <!-- - - - - - - - - - - - - - End of Carousel Pagination - - - - - - - - - - - - - - - - -->
+                                </div>
+                            </div>
+                            <div class="content-element2">
+                                <div class="tabs tabs-section vertical clearfix">
+                                    <!--tabs navigation-->
+                                    <ul class="tabs-nav clearfix">
+                                        <li>
+                                            <a href="#tab-1">Sale Information</a>
+                                        </li>
+                                        <li>
+                                            <a href="#tab-2">Other Information</a>
+                                        </li>
+                                        <li>
+                                            <a href="#tab-3">Space for Text</a>
+                                        </li>
+                                    </ul>
+
+                                    <!--tabs content-->
+                                    <div class="tabs-content">
+                                        <div id="tab-1">
+
+                                            <h4><b>Sale Information</b></h4>
+                                            <div class="features-section">
+
+                                                <ul class="custom-list type-5">
+                                                    <li>Status: {{ car.status }}</li>
+                                                    <li>Sale Status: {{ car.get_sale_status_display }}</li>
+                                                    <li>Location: {{ car.location }}</li>
+                                                </ul>
+
+                                                <ul class="custom-list type-5 other-items">
+                                                    <li>Status: {{ car.status }}</li>
+                                                    <li>Sale Status: {{ car.get_sale_status_display }}</li>
+                                                    <li>Location: {{ car.location }}</li>
+                                                </ul>
+
+                                            </div>
+
+                                        </div>
+                                        <div id="tab-2">
+
+                                            <h4><b>Other Information</b></h4>
+                                            <div class="features-section">
+
+                                                <ul class="custom-list type-5">
+                                                    <li>Status: {{ car.status }}</li>
+                                                    <li>Sale Status: {{ car.get_sale_status_display }}</li>
+                                                    <li>Location: {{ car.location }}</li>
+                                                </ul>
+
+                                                <ul class="custom-list type-5 other-items">
+                                                    <li>Status: {{ car.status }}</li>
+                                                    <li>Sale Status: {{ car.get_sale_status_display }}</li>
+                                                    <li>Location: {{ car.location }}</li>
+                                                </ul>
+
+                                            </div>
+
+                                            <a href="#" class="show-more info-btn type2">Show All</a>
+
+                                        </div>
+                                        <div id="tab-3">
+
+                                            <h4><b>Space for Text</b></h4>
+                                            <p>
+                                                Donec eget tellus non erat lacinia fermentum. Donec in velit vel ipsum
+                                                auctor pulvinar. Vestibulum iaculis lacinia est. Proin dictum elementum
+                                                velit. Fusce euismod consequat ante.
+                                            </p>
+                                            <p>
+                                                Nulla venenatis. In pede mi, aliquet sit amet, euismod in, auctor ut,
+                                                ligula. Donec porta diam eu massa. Quisque diam lorem, interdum.
+                                            </p>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </main>
+                    <aside id="sidebar" class="col-md-4">
+                        <div class="content-element3">
+                            <div class="btn btn-big btn-style-3 sidebar-btn" content="telephone=no">
+                                <i class="licon-telephone"></i><b>Call Us 08062332908</b>
+                            </div>
+                            <a href="javascript:;" class="btn btn-big sidebar-btn btn-style-4 contact-button"><i
+                                    class="licon-bag-dollar"></i>Click to buy</a>
+                            <div class="bg-sidebar-item">
+
+                                <h5 class="section-title">Vehicle details</h5>
+                                <ul class="car-detail-list">
+                                    <li class="flex-row flex-justify">
+                                        <div class="detail-col">
+                                            <span>Make</span><span>{{ car.make | capfirst }}</span>
+                                        </div>
+                                    </li>
+                                    <li class="flex-row flex-justify">
+                                        <div class="detail-col">
+                                            <span>Model</span><span>{{ car.model | capfirst }}</span>
+                                        </div>
+                                    </li>
+                                    <li class="flex-row flex-justify">
+                                        <div class="detail-col">
+                                            <span>Year</span><span>{{ car.year }}</span>
+                                        </div>
+                                    </li>
+                                    <li class="flex-row flex-justify">
+                                        <div class="detail-col">
+                                            <span>Driving Condition</span><span>{{ car.driving_condition }}</span>
+                                        </div>
+                                    </li>
+                                    <li class="flex-row flex-justify">
+                                        <div class="detail-col">
+                                            <span>VIN</span><span>{{ car.vin }}</span>
+                                        </div>
+                                    </li>
+                                    <li class="flex-row flex-justify">
+                                        <div class="detail-col">
+                                            <span>Odometer</span><span>{{ car.odometer }}</span>
+                                        </div>
+                                    </li>
+                                    <li class="flex-row flex-justify">
+                                        <div class="detail-col">
+                                            <span>Color</span><span>{{ car.colour }}</span>
+                                        </div>
+                                    </li>
+                                    <li class="flex-row flex-justify">
+                                        <div class="detail-col">
+                                            <span>Cylinders</span><span>{{ car.cylinder }}</span>
+                                        </div>
+                                    </li>
+                                    <li class="flex-row flex-justify">
+                                        <div class="detail-col">
+                                            <span>Transmission</span><span>{{ car.transmission }}</span>
+                                        </div>
+                                    </li>
+                                    <li class="flex-row flex-justify">
+                                        <div class="detail-col">
+                                            <span>Fuel</span><span>{{ car.fuel }}</span>
+                                        </div>
+                                    </li>
+                                    <li class="flex-row flex-justify">
+                                        <div class="detail-col">
+                                            <span>Drive</span><span>{{ car.drive }}</span>
+                                        </div>
+                                    </li>
+                                    <li class="flex-row flex-justify">
+                                        <div class="detail-col">
+                                            <span>Engine Type</span><span>{{ car.engine_type }}</span>
+                                        </div>
+                                    </li>
+                                    <li class="flex-row flex-justify">
+                                        <div class="detail-col">
+                                            <span>Start button</span><span>{{ car.get_start_mechanism_display }}</span>
+                                        </div>
+                                    </li>
+                                    <li class="flex-row flex-justify">
+                                        <div class="detail-col">
+                                            <span>Keys</span><span>{{ car.key }}</span>
+                                        </div>
+                                    </li>
+                                    <li class="flex-row flex-justify">
+                                        <div class="detail-col">
+                                            <span>Body Style</span><span>{{ car.body_style }}</span>
+                                        </div>
+                                    </li>
+                                    <li class="flex-row flex-justify">
+                                        <div class="detail-col">
+                                            <span>Damage</span><span>{{ car.damage }}</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </div>
+        <div class="page-section-bg">
+            <div class="container">
+                <h3 class="section-title">Recommended for You</h3>
+                <div class="carousel-type-3">
+                    <div class="owl-carousel products-holder" data-max-items="4" data-item-margin="30">
+                        {% for car in recommended_cars %}
+                            <!-- Slide -->
+                            <div class="product">
+                                <!-- - - - - - - - - - - - - - Product Image - - - - - - - - - - - - - - - - -->
+                                <a href="#"><img src="{{ car.feature_photo.url }}" alt=""></a>
+                                <!-- - - - - - - - - - - - - - End of Product Image - - - - - - - - - - - - - - - - -->
+
+                                <!-- - - - - - - - - - - - - - Product Description - - - - - - - - - - - - - - - - -->
+                                <div class="product-description">
+
+                                    <h5 class="product-name"><a href="#">{{ car.year }} {{ car.model  }}</a></h5>
+
+                                    <div class="pricing-area">
+                                        <div class="product-price">
+                                            NGN {{ car.amount | intcomma}}
+                                        </div>
+                                    </div>
+                                    <div class="model-loc">
+                                        <ul>
+                                            <li>
+                                                <span>Mileage</span>{{ car.odometer | intcomma}}
+                                            </li>
+                                            <li>
+                                                <span>Colours</span>{{ car.colour }}
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="model-info">
+                                        <a href="{% url 'cars:detail' pk=car.pk %}">View More Details
+                                        </a>
+                                    </div>
+                                </div>
+                                <!-- - - - - - - - - - - - - - End of Product Description - - - - - - - - - - - - - - - - -->
+
+                            </div>
+                            <!-- end of Slide -->
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
