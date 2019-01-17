@@ -7,3 +7,5 @@ media/
 ../.DS_Store
 .venv/
 .vscode/
+.DS_Store
+static/.DS_Store
