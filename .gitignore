@@ -4,3 +4,6 @@
 carenv/
 settings.py
 media/
+../.DS_Store
+.venv/
+.vscode/
