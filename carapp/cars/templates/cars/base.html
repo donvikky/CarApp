@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="{% static 'css/owl.carousel.css' %}">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+    <link rel="stylesheet" href="{% static 'css/site.css' %}">
     </head>
 <body>
     <!-- - - - - - - - - - - - - - Wrapper - - - - - - - - - - - - - - - - -->
@@ -38,12 +39,12 @@
         <div class="flex-row flex-justify flex-center">
 
           <div class="slash-list">
-            <a href="#">Honda</a>
+            <!--<a href="#">Honda</a>
             <a href="#">BMW</a>
             <a href="#">Toyota</a>
             <a href="#">Vans</a>
             <a href="#">Ford</a>
-            <a href="#">Bentley</a>
+            <a href="#">Bentley</a>-->
           </div>
 
           <div class="contact-info-menu type-2">
@@ -84,7 +85,8 @@
         <div class="logo-wrap">
 
           <a href="{% url 'cars:index' %}" class="logo">
-            <img src="{% static 'images/logo.png' %}" height="30" alt="">
+            <!--<img src="{% static 'images/logo.png' %}" height="30" alt="">-->
+            <span>AUA Autos</span>
           </a>
 
         </div>
@@ -105,13 +107,19 @@
                     <a href="#">Home</a>
                   </li>
                   <li class="">
-                    <a href="#">Cars</a>
+                    <a href="#">How to Buy</a>
+                  </li>
+                  <li class="">
+                    <a href="#">Shipping Process</a>
                   </li>
                   <li class="">
                     <a href="#">About Us</a>
                   </li>
                   <li class="">
                     <a href="#">Contact Us</a>
+                  </li>
+                  <li class="">
+                    <a href="#">Buy in Bulk</a>
                   </li>
                 </ul>
               </nav>
@@ -125,6 +133,21 @@
         </div>
 
       </div>
+
+      <!----------------------------------Search Bar --------------------------------------->
+      <div class="container" id="top-search-bar">
+        <form action="">
+          <div class="row flex-row">
+            <div class="col-sm-8">
+                <input type="text" class="col-sm-8" style="border:1px solid gray;" placeholder="search for cars">
+            </div>
+            <div class="col-sm-4">
+                <button class="btn col-sm-4">Search</button>
+            </div>
+          </div>
+       </form>
+      </div>
+      <!--------------------------------- End of search Bar --------------------------------------->
 
     </header>
 
@@ -175,7 +198,7 @@
                       <i class="icon-twitter"></i>
                     </a>
                   </li>
-                  <li>
+                  <!--<li>
                     <a href="#">
                       <i class="icon-youtube-play"></i>
                     </a>
@@ -184,7 +207,7 @@
                     <a href="#">
                       <i class="icon-gplus-3"></i>
                     </a>
-                  </li>
+                  </li>-->
                   <li>
                     <a href="#">
                       <i class="icon-instagram-5"></i>
